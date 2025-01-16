@@ -17,115 +17,117 @@ import jakarta.persistence.UniqueConstraint;
 
 @Entity
 @Table(name = "habitaciones", uniqueConstraints = {
-		@UniqueConstraint(columnNames = { "idCategoria", "idHabitaciones" }) })
+        @UniqueConstraint(columnNames = { "idCategoria", "idHabitaciones" }) })
 public class Habitaciones implements Serializable {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idHabitaciones;
+    private static final long serialVersionUID = 1L;
 
-	private Double precio;
-	private Integer nHabitacion;
-	private Integer nPiso;
-	private Long idCategoria;
-	@Column(name = "descriphabi", columnDefinition = "TEXT")
-	private String descriphabi;
-	@Column(name = "foto", columnDefinition = "TEXT")
-	private String foto;
-	private String estado;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long idHabitaciones;
 
-	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	@JoinColumn(name = "idHabitaciones")
-	private List<Arriendo> arriendo;
+    private Double precio;
+    private Integer nHabitacion;
+    private Integer nPiso;
+    private Long idCategoria;
 
-	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	@JoinColumn(name = "idHabitaciones")
-	private List<Servicio> servicio;
+    @Column(name = "descriphabi", columnDefinition = "TEXT")
+    private String descriphabi;
 
-	public Long getIdHabitaciones() {
-		return idHabitaciones;
-	}
+    @Column(name = "foto", columnDefinition = "TEXT")
+    private String foto;
 
-	public void setIdHabitaciones(Long idHabitaciones) {
-		this.idHabitaciones = idHabitaciones;
-	}
+    private String estado;
 
-	public Double getPrecio() {
-		return precio;
-	}
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "idHabitaciones")
+    private List<Arriendo> arriendo;
 
-	public void setPrecio(Double precio) {
-		this.precio = precio;
-	}
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "idHabitaciones")
+    private List<Servicio> servicio;
 
-	public Integer getnHabitacion() {
-		return nHabitacion;
-	}
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "habitacion")
+    private List<Calificacion> calificaciones;
 
-	public void setnHabitacion(Integer nHabitacion) {
-		this.nHabitacion = nHabitacion;
-	}
+    // Getters y Setters
+    public Long getIdHabitaciones() {
+        return idHabitaciones;
+    }
 
-	public Integer getnPiso() {
-		return nPiso;
-	}
+    public void setIdHabitaciones(Long idHabitaciones) {
+        this.idHabitaciones = idHabitaciones;
+    }
 
-	public void setnPiso(Integer nPiso) {
-		this.nPiso = nPiso;
-	}
+    public Double getPrecio() {
+        return precio;
+    }
 
-	public Long getIdCategoria() {
-		return idCategoria;
-	}
+    public void setPrecio(Double precio) {
+        this.precio = precio;
+    }
 
-	public void setIdCategoria(Long idCategoria) {
-		this.idCategoria = idCategoria;
-	}
+    public Integer getnHabitacion() {
+        return nHabitacion;
+    }
 
-	public List<Arriendo> getArriendo() {
-		return arriendo;
-	}
+    public void setnHabitacion(Integer nHabitacion) {
+        this.nHabitacion = nHabitacion;
+    }
 
-	public void setReservas(List<Arriendo> arriendo) {
-		this.arriendo = arriendo;
-	}
+    public Integer getnPiso() {
+        return nPiso;
+    }
 
-	public List<Servicio> getServicio() {
-		return servicio;
-	}
+    public void setnPiso(Integer nPiso) {
+        this.nPiso = nPiso;
+    }
 
-	public void setServicio(List<Servicio> servicio) {
-		this.servicio = servicio;
-	}
+    public Long getIdCategoria() {
+        return idCategoria;
+    }
 
-	public String getDescriphabi() {
-		return descriphabi;
-	}
+    public void setIdCategoria(Long idCategoria) {
+        this.idCategoria = idCategoria;
+    }
 
-	public void setDescriphabi(String descriphabi) {
-		this.descriphabi = descriphabi;
-	}
+    public List<Arriendo> getArriendo() {
+        return arriendo;
+    }
 
-	public String getFoto() {
-		return foto;
-	}
+    public void setArriendo(List<Arriendo> arriendo) {
+        this.arriendo = arriendo;
+    }
 
-	public void setFoto(String foto) {
-		this.foto = foto;
-	}
+    public List<Servicio> getServicio() {
+        return servicio;
+    }
 
-	public String getEstado() {
-		return estado;
-	}
+    public void setServicio(List<Servicio> servicio) {
+        this.servicio = servicio;
+    }
 
-	public void setEstado(String estado) {
-		this.estado = estado;
-	}
-	
-	
+    public String getDescriphabi() {
+        return descriphabi;
+    }
 
+    public void setDescriphabi(String descriphabi) {
+        this.descriphabi = descriphabi;
+    }
+
+    public String getFoto() {
+        return foto;
+    }
+
+    public void setFoto(String foto) {
+        this.foto = foto;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
 }
