@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.studentstay.app.Entity.EncabezadoFactura;
 import com.studentstay.app.Services.IEncabezadoFacturaService;
 
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
+import org.springframework.web.bind.annotation.RequestBody;
 
 @CrossOrigin(origins= {"http://localhost:4200","http://192.168.12.164:8081","http://192.168.0.119:8081","http://192.168.19.119:8081"})
 @RestController

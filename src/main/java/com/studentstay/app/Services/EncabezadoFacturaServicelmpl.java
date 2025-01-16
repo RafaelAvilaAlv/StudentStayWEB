@@ -3,11 +3,13 @@ package com.studentstay.app.Services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.studentstay.app.Dao.IEncabezadoFacturaDao;
 import com.studentstay.app.Entity.EncabezadoFactura;
 
+@Service
 public class EncabezadoFacturaServicelmpl implements IEncabezadoFacturaService {
 
 	@Autowired
