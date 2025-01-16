@@ -37,7 +37,6 @@ public class Persona {
 	@OneToMany(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
 	@JoinColumn(name="cedula_persona")
 	private List<Propietario>propietario;
-
 	
 	public String getCedula_persona() {
 		return cedula_persona;
