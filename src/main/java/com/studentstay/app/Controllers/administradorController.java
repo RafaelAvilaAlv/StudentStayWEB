@@ -19,8 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.studentstay.app.Entity.Administrador;
 import com.studentstay.app.Services.IAdministradorService;
 
-@CrossOrigin(origins = { "http://localhost:4200", "http://192.168.12.164:8081", "http://192.168.0.119:8081","http://192.168.19.119:8081" })
-@RestController
+
 @RequestMapping("/api")
 public class administradorController {
 
@@ -75,7 +74,7 @@ public class administradorController {
 			if (admin != null) {
 				return new ResponseEntity<>(admin, HttpStatus.OK);
 			} else {
-				return new ResponseEntity<>("Cliente no encontrado", HttpStatus.NOT_FOUND);
+				return new ResponseEntity<>("Estudiante no encontrado", HttpStatus.NOT_FOUND);
 			}
 		} catch (NumberFormatException e) {
 			List<Administrador> admins = AdministradorSevice.getBooksByTitle(usuario);
@@ -83,7 +82,7 @@ public class administradorController {
 			if (!admins.isEmpty()) {
 				return new ResponseEntity<>(admins, HttpStatus.OK);
 			} else {
-				return new ResponseEntity<>("Clientes no encontrados", HttpStatus.NOT_FOUND);
+				return new ResponseEntity<>("Estudiantes no encontrados", HttpStatus.NOT_FOUND);
 			}
 		}
 	}
