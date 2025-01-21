@@ -3,6 +3,8 @@ package com.studentstay.app.Entity;
 import java.io.Serializable;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -38,6 +40,7 @@ public class Provincia  implements Serializable{
 	
 	@OneToMany(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
 	@JoinColumn(name="id_provincia")
+	@JsonIgnore // Ignora esta propiedad al serializar a JSON
 	private List<Cantones> cantones;
 
 	public List<Cantones> getCantones() {

@@ -3,6 +3,8 @@ package com.studentstay.app.Controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -30,5 +32,15 @@ public class ProvinciaController {
 		return provinciaService.findById(id);
 	}
 
-	
+	@GetMapping("/testProvincias")
+	public ResponseEntity<?> testProvincias() {
+	    try {
+	        List<Provincia> provincias = provinciaService.findAll();
+	        return ResponseEntity.ok(provincias);
+	    } catch (Exception e) {
+	        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+	                             .body("Error al obtener provincias: " + e.getMessage());
+	    }
+	}
+
 }
