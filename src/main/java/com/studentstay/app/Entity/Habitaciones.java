@@ -41,7 +41,7 @@ public class Habitaciones implements Serializable {
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "idHabitaciones")
-    private List<Arriendo> arriendo;
+    private List<Reservas> reservas;
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "idHabitaciones")
@@ -91,13 +91,14 @@ public class Habitaciones implements Serializable {
         this.idCategoria = idCategoria;
     }
 
-    public List<Arriendo> getArriendo() {
-        return arriendo;
-    }
+    public List<Reservas> getReservas() {
+		return reservas;
+	}
 
-    public void setArriendo(List<Arriendo> arriendo) {
-        this.arriendo = arriendo;
-    }
+	public void setReservas(List<Reservas> reservas) {
+		this.reservas = reservas;
+	}
+
 
     public List<Servicio> getServicio() {
         return servicio;

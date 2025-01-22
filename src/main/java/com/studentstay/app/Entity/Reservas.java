@@ -18,8 +18,8 @@ import jakarta.persistence.TemporalType;
 import jakarta.persistence.UniqueConstraint;
 
 @Entity
-@Table(name="arriendos", uniqueConstraints = {@UniqueConstraint(columnNames= {"idPropietario","idHabitaciones","idCliente","idPago","idArriendo"})})
-public class Arriendo implements Serializable{
+@Table(name="reservas", uniqueConstraints = {@UniqueConstraint(columnNames= {"idRecepcionista","idHabitaciones","idCliente","idPago","idReserva"})})
+public class Reservas implements Serializable{
 	
 	/**
 	 * 
@@ -27,7 +27,7 @@ public class Arriendo implements Serializable{
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idArriendo;
+	private Long idReserva;
 	private Long idPago;
 	@Temporal(TemporalType.DATE)
 	private Date fechaSalida;
@@ -35,21 +35,21 @@ public class Arriendo implements Serializable{
 	private Date fechaEntrada;
 	private Double total;
 	private Long idHabitaciones;
-	private Long idPropietario;
+	private Long idRecepcionista;
 	private Long idCliente;
 	private Integer dias;
 	private Integer nPersona;
 	private String estado;
 	
 	@OneToMany(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
-	@JoinColumn(name="idArriendo")
+	@JoinColumn(name="idReserva")
 	private List<EncabezadoFactura> encabezado;
 	
-	public Long getIdArriendo() {
-		return idArriendo;
+	public Long getIdReserva() {
+		return idReserva;
 	}
-	public void setIdArriendo(Long IdArriendo) {
-		this.idArriendo = IdArriendo;
+	public void setIdReserva(Long idReserva) {
+		this.idReserva = idReserva;
 	}
 	public Long getIdPago() {
 		return idPago;
@@ -81,12 +81,13 @@ public class Arriendo implements Serializable{
 	public void setIdHabitaciones(Long idHabitaciones) {
 		this.idHabitaciones = idHabitaciones;
 	}
-	public Long getIdPropietario() {
-		return idPropietario;
+	public Long getIdRecepcionista() {
+		return idRecepcionista;
 	}
-	public void setIdPropietario(Long idPropietario) {
-		this.idPropietario = idPropietario;
+	public void setIdRecepcionista(Long idRecepcionista) {
+		this.idRecepcionista = idRecepcionista;
 	}
+
 
 	public Long getIdCliente() {
 		return idCliente;
@@ -120,4 +121,3 @@ public class Arriendo implements Serializable{
 	}
 
 }
-

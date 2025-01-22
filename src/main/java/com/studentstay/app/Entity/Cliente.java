@@ -31,7 +31,7 @@ public class Cliente implements Serializable{
 	
 	@OneToMany(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
 	@JoinColumn(name="idCliente")
-	private List<Arriendo>Arriendo;
+	private List<Reservas>Reservas;
 	public Long getIdCliente() {
 		return idCliente;
 	}

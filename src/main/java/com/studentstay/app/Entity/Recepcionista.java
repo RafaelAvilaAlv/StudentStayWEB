@@ -14,8 +14,8 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.persistence.UniqueConstraint;
 @Entity
-@Table(name="propietarios", uniqueConstraints = {@UniqueConstraint(columnNames= {"cedula_persona","idPropietario"})})
-public class Propietario  implements Serializable{
+@Table(name="recepcionistas", uniqueConstraints = {@UniqueConstraint(columnNames= {"cedula_persona","idRecepcionista"})})
+public class Recepcionista  implements Serializable{
 	
 	/**
 	 * 
@@ -23,20 +23,20 @@ public class Propietario  implements Serializable{
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idPropietario;
+	private Long idRecepcionista;
 	private String usuario;
 	private String contrasena;
 	private String cedula_persona;
 	
 	@OneToMany(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
-	@JoinColumn(name="idPropietarios")
-	private List<Arriendo>arriendos;
+	@JoinColumn(name="idRecepcionista")
+	private List<Reservas>Reservas;
 	
-	public Long getidPropietarios() {
-		return idPropietario;
+	public Long getIdRecepcionista() {
+		return idRecepcionista;
 	}
-	public void setidPropietarios(Long idPropietarios) {
-		this.idPropietario = idPropietarios;
+	public void setIdRecepcionista(Long idRecepcionista) {
+		this.idRecepcionista = idRecepcionista;
 	}
 	public String getUsuario() {
 		return usuario;
@@ -58,4 +58,3 @@ public class Propietario  implements Serializable{
 	}
 
 }
-

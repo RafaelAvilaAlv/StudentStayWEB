@@ -36,7 +36,7 @@ public class Persona {
 	private List<Administrador>Administrador;
 	@OneToMany(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
 	@JoinColumn(name="cedula_persona")
-	private List<Propietario>propietario;
+	private List<Recepcionista>recepcionista;
 
 	
 	public String getCedula_persona() {
@@ -105,13 +105,12 @@ public class Persona {
 	public void setCliente(List<Cliente> cliente) {
 		this.cliente = cliente;
 	}
-	public List<Propietario> getPropietario() {
-		return propietario;
+	public List<Recepcionista> getRecepcionista() {
+		return recepcionista;
 	}
-	public void setRecepcionista(List<Propietario> propietario) {
-		this.propietario = propietario;
+	public void setRecepcionista(List<Recepcionista> recepcionista) {
+		this.recepcionista = recepcionista;
 	}
-	
 
 	
 }

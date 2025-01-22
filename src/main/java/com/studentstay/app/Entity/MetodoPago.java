@@ -31,7 +31,7 @@ public class MetodoPago implements Serializable{
 	
 	@OneToMany(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
 	@JoinColumn(name="idPago")
-	private List<Arriendo> arriendo;
+	private List<Reservas> reserva;
 	
 	public Long getIdPago() {
 		return idPago;
@@ -45,11 +45,12 @@ public class MetodoPago implements Serializable{
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public List<Arriendo> getIdArriendo() {
-		return arriendo;
+	public List<Reservas> getReserva() {
+		return reserva;
 	}
-	public void setIdArriendo(List<Arriendo> arriendo) {
-		this.arriendo = arriendo;
+	public void setReserva(List<Reservas> reserva) {
+		this.reserva = reserva;
 	}
+	
 	
 }
