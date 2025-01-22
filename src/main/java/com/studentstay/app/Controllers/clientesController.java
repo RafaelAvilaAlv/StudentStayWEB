@@ -18,67 +18,74 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.studentstay.app.Services.*;
 import com.studentstay.app.Entity.*;
+
 @CrossOrigin(origins= {"http://localhost:4200","http://192.168.40.228:8081","http://192.168.0.119:8081","http://192.168.19.119:8081"})
 @RestController
 @RequestMapping("/api")
-public class administradorController {
+public class clientesController {
 	@Autowired
-	private IAdministradorService AdministradorSevice;
-	//LISTAR Administrador
-	@GetMapping("/administrador")
+	private IClienteService ClienteSevice;
 
-		public List<Administrador> index(){
-		return AdministradorSevice.findAll();
+
+	//LISTAR_Cliente
+	@GetMapping("/clientes")
+
+		public List<Cliente> index(){
+		return ClienteSevice.findAll();
 		
 	}
-		//BUSCAR Administrador
-	@GetMapping("/administrador/{id}")
-	public Administrador show(@PathVariable Long id) {
-		return AdministradorSevice.findById(id);
-	}
-	//GUARDAR Administrador
-
-	@PostMapping("/administrador")
-	@ResponseStatus(HttpStatus.CREATED)
-	public Administrador create(@RequestBody Administrador Administrador) {
-		return AdministradorSevice.save(Administrador);
-	}
-	//EDITAR Administrador
-	@PutMapping("/administrador/{id}")
-	@ResponseStatus(HttpStatus.CREATED)
-	public Administrador update(@RequestBody Administrador Administrador, @PathVariable Long id) {
-		Administrador AdministradorActual = AdministradorSevice.findById(id);
-		AdministradorActual.setContrasena(Administrador.getContrasena());
-		AdministradorActual.setUsuario(Administrador.getUsuario());
-		
-		return AdministradorSevice.save(AdministradorActual);
-	}
-	//ELIMINAR Administrador
-	@DeleteMapping("/administrador/{id}")
-	@ResponseStatus(HttpStatus.NO_CONTENT)
-	public void delete(@PathVariable Long id) {
-		AdministradorSevice.delete(id);
+		//BUSCAR_Cliente
+	@GetMapping("/clientes/{id}")
+	public Cliente show(@PathVariable Long id) {
+	return ClienteSevice.findById(id);
 	}
 	
-	@GetMapping("/administrador/usuario/{usuario}")
-	public ResponseEntity<?> getAdmin(@PathVariable String usuario) {
+	//GUARDAR_Cliente
+	@PostMapping("/clientes")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Cliente create(@RequestBody Cliente cliente) {
+        return ClienteSevice.save(cliente);
+    }
+
+	
+	
+	//EDITAR_Cliente
+	@PutMapping("/clientes/{id}")
+	@ResponseStatus(HttpStatus.CREATED)
+	public Cliente update(@RequestBody Cliente Cliente, @PathVariable Long id) {
+		Cliente ClienteActual = ClienteSevice.findById(id);
+		ClienteActual.setContrasena(Cliente.getContrasena());
+		ClienteActual.setFoto(Cliente.getFoto());
+		ClienteActual.setUsuario(Cliente.getUsuario());	
+		return ClienteSevice.save(ClienteActual);
+	}
+	//ELIMINAR_Cliente
+	@DeleteMapping("/clientes/{id}")
+	@ResponseStatus(HttpStatus.NO_CONTENT)
+	public void delete(@PathVariable Long id) {
+		ClienteSevice.delete(id);
+	}
+	
+	@GetMapping("/clientes/usuario/{usuario}")
+	public ResponseEntity<?> getClientes(@PathVariable String usuario) {
 	 try {
 	        Long id = Long.parseLong(usuario);
-	        Administrador admin = AdministradorSevice.findById(id);
+	        Cliente cliente = ClienteSevice.findById(id);
 	        
-	        if (admin != null) {
-	            return new ResponseEntity<>(admin, HttpStatus.OK);
+	        if (cliente != null) {
+	            return new ResponseEntity<>(cliente, HttpStatus.OK);
 	        } else {
 	            return new ResponseEntity<>("Cliente no encontrado", HttpStatus.NOT_FOUND);
 	        }
 	    } catch (NumberFormatException e) {
-	        List<Administrador> admins = AdministradorSevice.getBooksByTitle(usuario);
+	        List<Cliente> clientes = ClienteSevice.getBooksByTitle(usuario);
 	        
-	        if (!admins.isEmpty()) {
-	            return new ResponseEntity<>(admins, HttpStatus.OK);
+	        if (!clientes.isEmpty()) {
+	            return new ResponseEntity<>(clientes, HttpStatus.OK);
 	        } else {
 	            return new ResponseEntity<>("Clientes no encontrados", HttpStatus.NOT_FOUND);
 	        }
 	    }
 	}
+	
 }

@@ -30,8 +30,8 @@ public class Calificacion implements Serializable {
     private Habitaciones habitacion;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "idEstudiante", nullable = false)
-    private Estudiante estudiante;
+    @JoinColumn(name = "idCliente", nullable = false)
+    private Cliente cliente;
 
     private Date fechaCalificacion;
 
@@ -68,12 +68,12 @@ public class Calificacion implements Serializable {
         this.habitacion = habitacion;
     }
 
-    public Estudiante getEstudiante() {
-        return estudiante;
+    public Cliente getCliente() {
+        return cliente;
     }
 
-    public void setEstudiante(Estudiante estudiante) {
-        this.estudiante = estudiante;
+    public void setEstudiante(Cliente cliente) {
+        this.cliente = cliente;
     }
 
     public Date getFechaCalificacion() {

@@ -27,7 +27,7 @@ public class EncabezadoFactura implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idEncabezado;
-	private Long idEstudiante;
+	private Long idCliente;
 	private Long idArriendo;
 	@Temporal(TemporalType.DATE)
 	private Date fechaFactura;
@@ -44,11 +44,11 @@ public class EncabezadoFactura implements Serializable {
 		this.idEncabezado = idEncabezado;
 	}
 	
-	public Long getIdEstudiante() {
-		return idEstudiante;
+	public Long getIdCliente() {
+		return idCliente;
 	}
-	public void setIdEstudiante(Long idEstudiante) {
-		this.idEstudiante = idEstudiante;
+	public void setIdCliente(Long idCliente) {
+		this.idCliente = idCliente;
 	}
 	public Date getFechaFactura() {
 		return fechaFactura;

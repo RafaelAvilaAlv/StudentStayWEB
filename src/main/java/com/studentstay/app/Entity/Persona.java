@@ -29,7 +29,7 @@ public class Persona {
 
 	@OneToMany(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
 	@JoinColumn(name="cedula_persona")
-	private List<Estudiante>estudiante;
+	private List<Cliente>cliente;
 	
 	@OneToMany(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
 	@JoinColumn(name="cedula_persona")
@@ -99,11 +99,11 @@ public class Persona {
 	public void setId_canton(String id_canton) {
 		this.id_canton = id_canton;
 	}
-	public List<Estudiante> getEstudiantes() {
-		return estudiante;
+	public List<Cliente> getCliente() {
+		return cliente;
 	}
-	public void setEstudiante(List<Estudiante> estudiante) {
-		this.estudiante = estudiante;
+	public void setCliente(List<Cliente> cliente) {
+		this.cliente = cliente;
 	}
 	public List<Propietario> getPropietario() {
 		return propietario;

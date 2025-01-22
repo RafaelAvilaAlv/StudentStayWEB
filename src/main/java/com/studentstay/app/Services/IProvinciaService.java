@@ -2,13 +2,12 @@ package com.studentstay.app.Services;
 
 import java.util.List;
 
-import com.studentstay.app.Entity.*;
 
+import com.studentstay.app.Entity.*;
 
 public interface IProvinciaService {
 	
-	
- public List<Provincia> findAll();
+	 public List<Provincia> findAll();
 	 
 	 public Provincia save(Provincia provincia);
 	 

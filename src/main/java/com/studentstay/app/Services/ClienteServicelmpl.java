@@ -8,37 +8,44 @@ import com.studentstay.app.Dao.*;
 import com.studentstay.app.Entity.*;
 
 @Service
-public class ProvinciaServicelmpl implements IProvinciaService {
+public class ClienteServicelmpl implements IClienteService {
 
 
 	@Autowired
-	private IProvinciaDao habiDao;
+	private IClienteDao cliDao;
 
 	@Override
 	@Transactional(readOnly = true)
-	public List<Provincia> findAll() {
+	public List<Cliente> findAll() {
 
-		return (List<Provincia>) habiDao.findAll();
+		return (List<Cliente>) cliDao.findAll();
 	}
 
 	@Override
 	@Transactional(readOnly = true)
-	public Provincia findById(String id) {
+	public Cliente findById(Long id) {
 		// TODO Auto-generated method stub
-		return habiDao.findById(id).orElse(null);
+		return cliDao.findById(id).orElse(null);
 	}
 
 	@Override
 	@Transactional
-	public Provincia save(Provincia enca) {
+	public Cliente save(Cliente cli) {
 		// TODO Auto-generated method stub
-		return habiDao.save(enca);
+		return cliDao.save(cli);
 	}
 
 	@Override
 	@Transactional
-	public void delete(String id) {
+	public void delete(Long id) {
 		// TODO Auto-generated method stub
-		habiDao.deleteById(id);
+		cliDao.deleteById(id);
+	}
+
+
+	@Override
+	public List<Cliente> getBooksByTitle(String usuario) {
+		// TODO Auto-generated method stub
+		return cliDao.findByUsuarioContainingIgnoreCase(usuario);
 	}
 }
