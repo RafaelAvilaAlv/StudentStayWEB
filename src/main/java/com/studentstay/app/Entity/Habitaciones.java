@@ -1,4 +1,4 @@
-package com.studentstay.app.Entity;
+package com.StudentStay.app.Entity;
 
 import java.io.Serializable;
 import java.util.List;
@@ -17,81 +17,76 @@ import jakarta.persistence.UniqueConstraint;
 
 @Entity
 @Table(name = "habitaciones", uniqueConstraints = {
-        @UniqueConstraint(columnNames = { "idCategoria", "idHabitaciones" }) })
+		@UniqueConstraint(columnNames = { "idCategoria", "idHabitaciones" }) })
 public class Habitaciones implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
-    private static final long serialVersionUID = 1L;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long idHabitaciones;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idHabitaciones;
+	private Double precio;
+	private Integer nHabitacion;
+	private Integer nPiso;
+	private Long idCategoria;
+	@Column(name = "descriphabi", columnDefinition = "TEXT")
+	private String descriphabi;
+	@Column(name = "foto", columnDefinition = "TEXT")
+	private String foto;
+	private String estado;
 
-    private Double precio;
-    private Integer nHabitacion;
-    private Integer nPiso;
-    private Long idCategoria;
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinColumn(name = "idHabitaciones")
+	private List<Reservas> reservas;
 
-    @Column(name = "descriphabi", columnDefinition = "TEXT")
-    private String descriphabi;
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinColumn(name = "idHabitaciones")
+	private List<Servicio> servicio;
 
-    @Column(name = "foto", columnDefinition = "TEXT")
-    private String foto;
+	public Long getIdHabitaciones() {
+		return idHabitaciones;
+	}
 
-    private String estado;
+	public void setIdHabitaciones(Long idHabitaciones) {
+		this.idHabitaciones = idHabitaciones;
+	}
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "idHabitaciones")
-    private List<Reservas> reservas;
+	public Double getPrecio() {
+		return precio;
+	}
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "idHabitaciones")
-    private List<Servicio> servicio;
+	public void setPrecio(Double precio) {
+		this.precio = precio;
+	}
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "habitacion")
-    private List<Calificacion> calificaciones;
+	public Integer getnHabitacion() {
+		return nHabitacion;
+	}
 
-    // Getters y Setters
-    public Long getIdHabitaciones() {
-        return idHabitaciones;
-    }
+	public void setnHabitacion(Integer nHabitacion) {
+		this.nHabitacion = nHabitacion;
+	}
 
-    public void setIdHabitaciones(Long idHabitaciones) {
-        this.idHabitaciones = idHabitaciones;
-    }
+	public Integer getnPiso() {
+		return nPiso;
+	}
 
-    public Double getPrecio() {
-        return precio;
-    }
+	public void setnPiso(Integer nPiso) {
+		this.nPiso = nPiso;
+	}
 
-    public void setPrecio(Double precio) {
-        this.precio = precio;
-    }
+	public Long getIdCategoria() {
+		return idCategoria;
+	}
 
-    public Integer getnHabitacion() {
-        return nHabitacion;
-    }
+	public void setIdCategoria(Long idCategoria) {
+		this.idCategoria = idCategoria;
+	}
 
-    public void setnHabitacion(Integer nHabitacion) {
-        this.nHabitacion = nHabitacion;
-    }
-
-    public Integer getnPiso() {
-        return nPiso;
-    }
-
-    public void setnPiso(Integer nPiso) {
-        this.nPiso = nPiso;
-    }
-
-    public Long getIdCategoria() {
-        return idCategoria;
-    }
-
-    public void setIdCategoria(Long idCategoria) {
-        this.idCategoria = idCategoria;
-    }
-
-    public List<Reservas> getReservas() {
+	public List<Reservas> getReservas() {
 		return reservas;
 	}
 
@@ -99,36 +94,38 @@ public class Habitaciones implements Serializable {
 		this.reservas = reservas;
 	}
 
+	public List<Servicio> getServicio() {
+		return servicio;
+	}
 
-    public List<Servicio> getServicio() {
-        return servicio;
-    }
+	public void setServicio(List<Servicio> servicio) {
+		this.servicio = servicio;
+	}
 
-    public void setServicio(List<Servicio> servicio) {
-        this.servicio = servicio;
-    }
+	public String getDescriphabi() {
+		return descriphabi;
+	}
 
-    public String getDescriphabi() {
-        return descriphabi;
-    }
+	public void setDescriphabi(String descriphabi) {
+		this.descriphabi = descriphabi;
+	}
 
-    public void setDescriphabi(String descriphabi) {
-        this.descriphabi = descriphabi;
-    }
+	public String getFoto() {
+		return foto;
+	}
 
-    public String getFoto() {
-        return foto;
-    }
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
 
-    public void setFoto(String foto) {
-        this.foto = foto;
-    }
+	public String getEstado() {
+		return estado;
+	}
 
-    public String getEstado() {
-        return estado;
-    }
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+	
+	
 
-    public void setEstado(String estado) {
-        this.estado = estado;
-    }
 }

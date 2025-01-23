@@ -1,9 +1,9 @@
-package com.studentstay.app.Dao;
+package com.StudentStay.app.Dao;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.studentstay.app.Entity.EncabezadoFactura;
+import com.StudentStay.app.Entity.*;
 
-public interface IEncabezadoFacturaDao extends CrudRepository<EncabezadoFactura, Long> {
+public interface IEncabezadoFacturaDao extends CrudRepository<EncabezadoFactura, Long>{
 
 }

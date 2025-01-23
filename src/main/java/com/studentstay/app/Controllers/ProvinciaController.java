@@ -1,4 +1,4 @@
-package com.studentstay.app.Controllers;
+package com.StudentStay.app.Controllers;
 
 import java.util.List;
 
@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.studentstay.app.Services.*;
-import com.studentstay.app.Entity.*;
+import com.StudentStay.app.Entity.Provincia;
+import com.StudentStay.app.Services.IProvinciaService;
 
 
-@CrossOrigin(origins= {"http://localhost:4200","http://192.168.40.228:8081","http://192.168.0.119:8081","http://192.168.19.119:8081"})
+@CrossOrigin(origins= {"http://localhost:4200","http://192.168.12.164:8081","http://192.168.0.119:8081","http://192.168.19.119:8081"})
 @RestController
 @RequestMapping("/api")
 public class ProvinciaController {

@@ -1,17 +1,17 @@
-package com.studentstay.app.Services;
+package com.StudentStay.app.Services;
 
 import java.util.List;
 
-import com.studentstay.app.Entity.EncabezadoFactura;
+import com.StudentStay.app.Entity.*;
 
 public interface IEncabezadoFacturaService {
+	
+	 public List<EncabezadoFactura> findAll();
+	 
+	 public EncabezadoFactura save(EncabezadoFactura encabezadoFactura);
+	 
+	 public EncabezadoFactura findById(Long idEncabezado);
+	 
+	 public void delete(Long idEncabezado);
 
-	public List<EncabezadoFactura> findAll();
-	
-	public EncabezadoFactura save (EncabezadoFactura encabezadoFactu);
-	
-	public EncabezadoFactura findById(Long idEncabezado);
-	
-	public void delete (Long idEncabezado);
-	
 }

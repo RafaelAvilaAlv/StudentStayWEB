@@ -1,10 +1,10 @@
-package com.proyecto.api;
+package com.zhotel.app;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class StuadentStayPcwebApplicationTests {
+class ZHoteappiApplicationTests {
 
 	@Test
 	void contextLoads() {

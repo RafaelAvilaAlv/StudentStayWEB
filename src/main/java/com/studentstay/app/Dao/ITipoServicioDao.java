@@ -1,9 +1,8 @@
-package com.studentstay.app.Dao;
-
+package com.StudentStay.app.Dao;
 import org.springframework.data.repository.CrudRepository;
 
-import com.studentstay.app.Entity.TipoServicio;
+import com.StudentStay.app.Entity.*;
 
-public interface ITipoServicioDao  extends CrudRepository<TipoServicio, Long> {
+public interface ITipoServicioDao extends CrudRepository<TipoServicio,Long>{
 
 }

@@ -1,46 +1,45 @@
-package com.studentstay.app.Services;
+package com.StudentStay.app.Services;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.studentstay.app.Dao.IDetalleFacturaDao;
-import com.studentstay.app.Entity.detalleFactura;
+import com.StudentStay.app.Dao.*;
+import com.StudentStay.app.Entity.*;
 
 @Service
 public class DetalleFacturaServicelmpl implements IDetalleFacturaService {
 
+
 	@Autowired
-	private IDetalleFacturaDao detalleDao;
-	
+	private IDetalleFacturaDao detaDao;
+
 	@Override
 	@Transactional(readOnly = true)
 	public List<detalleFactura> findAll() {
-		// TODO Auto-generated method stub
-		return (List<detalleFactura>) detalleDao.findAll();
-	}
 
-	@Override
-	@Transactional
-	public detalleFactura save(detalleFactura detallefactura) {
-		// TODO Auto-generated method stub
-		return detalleDao.save(detallefactura);
+		return (List<detalleFactura>) detaDao.findAll();
 	}
 
 	@Override
 	@Transactional(readOnly = true)
-	public detalleFactura finById(Long idDetalleF) {
+	public detalleFactura findById(Long id) {
 		// TODO Auto-generated method stub
-		return detalleDao.findById(idDetalleF).orElse(null);
+		return detaDao.findById(id).orElse(null);
 	}
 
 	@Override
 	@Transactional
-	public void delete(Long idDetalleF) {
+	public detalleFactura save(detalleFactura detalle) {
 		// TODO Auto-generated method stub
-		detalleDao.deleteById(idDetalleF);
+		return detaDao.save(detalle);
 	}
 
+	@Override
+	@Transactional
+	public void delete(Long id) {
+		// TODO Auto-generated method stub
+		detaDao.deleteById(id);
+	}
 }

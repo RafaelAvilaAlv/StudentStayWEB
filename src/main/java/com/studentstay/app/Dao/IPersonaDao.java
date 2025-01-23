@@ -1,9 +1,9 @@
-package com.studentstay.app.Dao;
+package com.StudentStay.app.Dao;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.studentstay.app.Entity.Persona;
+import com.StudentStay.app.Entity.*;
 
-public interface IPersonaDao extends CrudRepository<Persona, String> {
+public interface IPersonaDao extends CrudRepository<Persona,String>{
 
 }

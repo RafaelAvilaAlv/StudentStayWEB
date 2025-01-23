@@ -1,9 +1,8 @@
-package com.studentstay.app.Services;
+package com.StudentStay.app.Services;
 
 import java.util.List;
 
-
-import com.studentstay.app.Entity.*;
+import com.StudentStay.app.Entity.*;
 
 public interface ICantonesService {
 	

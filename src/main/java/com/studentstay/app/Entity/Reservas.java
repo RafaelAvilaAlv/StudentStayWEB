@@ -1,4 +1,4 @@
-package com.studentstay.app.Entity;
+package com.StudentStay.app.Entity;
 
 import java.io.Serializable;
 import java.util.Date;

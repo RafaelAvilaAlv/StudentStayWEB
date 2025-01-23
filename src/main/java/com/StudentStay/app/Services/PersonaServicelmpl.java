@@ -1,18 +1,18 @@
-package com.studentstay.app.Services;
+package com.StudentStay.app.Services;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.studentstay.app.Dao.IPersonaDao;
-import com.studentstay.app.Entity.Persona;
-
+import com.StudentStay.app.Dao.*;
+import com.StudentStay.app.Entity.*;
 
 
 @Service
-public class PersonaServiceImpl implements IPersonaService{
+public class PersonaServicelmpl implements IPersonaService {
+
+
 	@Autowired
 	private IPersonaDao persoDao;
 
@@ -32,9 +32,9 @@ public class PersonaServiceImpl implements IPersonaService{
 
 	@Override
 	@Transactional
-	public Persona save(Persona persona) {
+	public Persona save(Persona enca) {
 		// TODO Auto-generated method stub
-		return persoDao.save(persona);
+		return persoDao.save(enca);
 	}
 
 	@Override
@@ -43,6 +43,4 @@ public class PersonaServiceImpl implements IPersonaService{
 		// TODO Auto-generated method stub
 		persoDao.deleteById(id);
 	}
-	
-
 }

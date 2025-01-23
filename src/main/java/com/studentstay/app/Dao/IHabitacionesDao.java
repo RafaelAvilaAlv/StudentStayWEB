@@ -1,12 +1,9 @@
-package com.studentstay.app.Dao;
-
-import java.util.List;
+package com.StudentStay.app.Dao;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.studentstay.app.Entity.Habitaciones;
+import com.StudentStay.app.Entity.*;
 
-public interface IHabitacionesDao extends CrudRepository<Habitaciones, Long> {
-
+public interface IHabitacionesDao extends CrudRepository<Habitaciones,Long>{
 
 }

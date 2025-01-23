@@ -1,4 +1,4 @@
-package com.studentstay.app.Entity;
+package com.StudentStay.app.Entity;
 
 import java.io.Serializable;
 import java.util.List;
@@ -27,6 +27,7 @@ public class Recepcionista  implements Serializable{
 	private String usuario;
 	private String contrasena;
 	private String cedula_persona;
+	private Double sueldo;
 	
 	@OneToMany(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
 	@JoinColumn(name="idRecepcionista")
@@ -55,6 +56,12 @@ public class Recepcionista  implements Serializable{
 	}
 	public void setCedula_persona(String cedula_persona) {
 		this.cedula_persona = cedula_persona;
+	}
+	public Double getSueldo() {
+		return sueldo;
+	}
+	public void setSueldo(Double sueldo) {
+		this.sueldo = sueldo;
 	}
 
 }

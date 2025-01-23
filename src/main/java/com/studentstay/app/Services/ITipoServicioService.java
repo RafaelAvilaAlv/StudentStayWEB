@@ -1,14 +1,12 @@
-package com.studentstay.app.Services;
+package com.StudentStay.app.Services;
 
 import java.util.List;
 
-import com.studentstay.app.Entity.*;
-
-
+import com.StudentStay.app.Entity.*;
 
 public interface ITipoServicioService {
 	
-public List<TipoServicio> findAll();
+	public List<TipoServicio> findAll();
 	
 	public TipoServicio save(TipoServicio tipoServicio);
 	

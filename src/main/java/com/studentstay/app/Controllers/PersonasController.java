@@ -1,4 +1,4 @@
-package com.studentstay.app.Controllers;
+package com.StudentStay.app.Controllers;
 
 import java.util.List;
 
@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.studentstay.app.Entity.Persona;
-import com.studentstay.app.Services.IPersonaService;
+import com.StudentStay.app.Entity.Persona;
+import com.StudentStay.app.Services.IPersonaService;
 
 
 

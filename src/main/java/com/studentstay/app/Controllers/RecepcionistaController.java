@@ -1,4 +1,4 @@
-package com.studentstay.app.Controllers;
+package com.StudentStay.app.Controllers;
 
 import java.util.List;
 
@@ -15,12 +15,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-import com.studentstay.app.Entity.Recepcionista;
-import com.studentstay.app.Services.IRecepcionistaService;
+
+import com.StudentStay.app.Entity.Recepcionista;
+import com.StudentStay.app.Services.IRecepcionistaService;
 
 
 
-@CrossOrigin(origins= {"http://localhost:4200","http://192.168.40.228:8081","http://192.168.0.119:8081","http://192.168.19.119:8081"})
+@CrossOrigin(origins= {"http://localhost:4200","http://192.168.12.164:8081","http://192.168.0.119:8081","http://192.168.19.119:8081"})
 @RestController
 @RequestMapping("/api")
 public class RecepcionistaController {

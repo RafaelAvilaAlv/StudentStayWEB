@@ -1,13 +1,13 @@
-package com.studentstay.app;
+package com.StudentStay.app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class StuadentStayPcwebApplication {
+public class ZHoteappiApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(StuadentStayPcwebApplication.class, args);
+		SpringApplication.run(ZHoteappiApplication.class, args);
 	}
 
 }

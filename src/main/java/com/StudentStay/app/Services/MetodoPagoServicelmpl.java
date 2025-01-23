@@ -9,37 +9,37 @@ import com.StudentStay.app.Dao.*;
 import com.StudentStay.app.Entity.*;
 
 @Service
-public class ProvinciaServicelmpl implements IProvinciaService {
+public class MetodoPagoServicelmpl implements IMetodoPagoService {
 
 
 	@Autowired
-	private IProvinciaDao habiDao;
+	private IMetodoPagoDao pagoDao;
 
 	@Override
 	@Transactional(readOnly = true)
-	public List<Provincia> findAll() {
+	public List<MetodoPago> findAll() {
 
-		return (List<Provincia>) habiDao.findAll();
+		return (List<MetodoPago>) pagoDao.findAll();
 	}
 
 	@Override
 	@Transactional(readOnly = true)
-	public Provincia findById(String id) {
+	public MetodoPago findById(Long id) {
 		// TODO Auto-generated method stub
-		return habiDao.findById(id).orElse(null);
+		return pagoDao.findById(id).orElse(null);
 	}
 
 	@Override
 	@Transactional
-	public Provincia save(Provincia enca) {
+	public MetodoPago save(MetodoPago enca) {
 		// TODO Auto-generated method stub
-		return habiDao.save(enca);
+		return pagoDao.save(enca);
 	}
 
 	@Override
 	@Transactional
-	public void delete(String id) {
+	public void delete(Long id) {
 		// TODO Auto-generated method stub
-		habiDao.deleteById(id);
+		pagoDao.deleteById(id);
 	}
 }

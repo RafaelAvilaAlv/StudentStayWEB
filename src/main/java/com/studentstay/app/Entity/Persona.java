@@ -1,4 +1,4 @@
-package com.studentstay.app.Entity;
+package com.StudentStay.app.Entity;
 
 import java.util.List;
 
@@ -37,7 +37,6 @@ public class Persona {
 	@OneToMany(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
 	@JoinColumn(name="cedula_persona")
 	private List<Recepcionista>recepcionista;
-
 	
 	public String getCedula_persona() {
 		return cedula_persona;
@@ -111,6 +110,7 @@ public class Persona {
 	public void setRecepcionista(List<Recepcionista> recepcionista) {
 		this.recepcionista = recepcionista;
 	}
+	
 
 	
 }

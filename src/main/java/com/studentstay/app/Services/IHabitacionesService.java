@@ -1,22 +1,17 @@
-package com.studentstay.app.Services;
+package com.StudentStay.app.Services;
 
 import java.util.List;
 
-import com.studentstay.app.Entity.Habitaciones;
-
-
+import com.StudentStay.app.Entity.*;
 
 public interface IHabitacionesService {
+	
+	public List<Habitaciones> findAll();
+	
+	public Habitaciones save(Habitaciones habitaciones);
+	
+	public Habitaciones findById(Long idHabitaciones);
+	
+	public void delete(Long idHabitaciones);
 
-	    // Devuelve todos los datos
-	    public List<Habitaciones> findAll();
-
-	    // Guarda 
-	    public Habitaciones save(Habitaciones habitacion);
-
-	    // Buscapor su ID
-	    public Habitaciones findById(Long idhabitaciones);
-
-	    // Elimina  por su ID
-	    public void delete(Long idHabitaciones);
 }

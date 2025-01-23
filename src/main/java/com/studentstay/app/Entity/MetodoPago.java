@@ -1,4 +1,4 @@
-package com.studentstay.app.Entity;
+package com.StudentStay.app.Entity;
 
 import java.io.Serializable;
 import java.util.List;
@@ -51,6 +51,5 @@ public class MetodoPago implements Serializable{
 	public void setReserva(List<Reservas> reserva) {
 		this.reserva = reserva;
 	}
-	
 	
 }

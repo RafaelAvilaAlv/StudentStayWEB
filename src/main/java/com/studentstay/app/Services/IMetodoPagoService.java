@@ -1,20 +1,17 @@
-package com.studentstay.app.Services;
+package com.StudentStay.app.Services;
 
 import java.util.List;
 
-import com.studentstay.app.Entity.MetodoPago;
-
+import com.StudentStay.app.Entity.*;
 
 public interface IMetodoPagoService {
-	  // Devuelve todos los datos
-    public List<MetodoPago> findAll();
-
-    // Guarda 
-    public MetodoPago save(MetodoPago metodopago);
-
-    // Buscapor su ID
-    public MetodoPago findById(Long idPago);
-
-    // Elimina  por su ID
-    public void delete(Long idPago);
+	
+	public List<MetodoPago> findAll();
+	
+	public MetodoPago save(MetodoPago metodoPago);
+	
+	 public MetodoPago findById(Long idPago);
+	 
+	 public void delete(Long idPago);
+ 
 }

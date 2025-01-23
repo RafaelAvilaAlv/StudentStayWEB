@@ -1,46 +1,46 @@
-package com.studentstay.app.Services;
+package com.StudentStay.app.Services;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.studentstay.app.Dao.ICategoriasDao;
-import com.studentstay.app.Entity.Categorias;
+import com.StudentStay.app.Dao.*;
+import com.StudentStay.app.Entity.*;
 
 @Service
-public class CategoriasServicelmpl implements ICategoriaService{
+public class CategoriasServicelmpl implements ICategoriasService {
+
+
 
 	@Autowired
-	private ICategoriasDao categoriaDao;
-	
+	private ICategoriasDao canteDao;
+
 	@Override
 	@Transactional(readOnly = true)
 	public List<Categorias> findAll() {
+
+		return (List<Categorias>) canteDao.findAll();
+	}
+
+	@Override
+	@Transactional(readOnly = true)
+	public Categorias findById(Long id) {
 		// TODO Auto-generated method stub
-		return (List<Categorias>) categoriaDao.findAll();
+		return canteDao.findById(id).orElse(null);
 	}
 
 	@Override
 	@Transactional
-	public Categorias save(Categorias categorias) {
+	public Categorias save(Categorias cate) {
 		// TODO Auto-generated method stub
-		return categoriaDao.save(categorias);
+		return canteDao.save(cate);
 	}
 
 	@Override
 	@Transactional
-	public Categorias findById(Long idCategoria) {
+	public void delete(Long id) {
 		// TODO Auto-generated method stub
-		return categoriaDao.findById(idCategoria).orElse(null);
+		canteDao.deleteById(id);
 	}
-
-	@Override
-	@Transactional
-	public void delete(Long idCategoria) {
-		// TODO Auto-generated method stub
-		categoriaDao.deleteById(idCategoria);
-	}
-
 }

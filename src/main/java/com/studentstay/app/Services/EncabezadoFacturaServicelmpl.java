@@ -1,46 +1,46 @@
-package com.studentstay.app.Services;
+package com.StudentStay.app.Services;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.studentstay.app.Dao.IEncabezadoFacturaDao;
-import com.studentstay.app.Entity.EncabezadoFactura;
+import com.StudentStay.app.Dao.*;
+import com.StudentStay.app.Entity.*;
+
 
 @Service
 public class EncabezadoFacturaServicelmpl implements IEncabezadoFacturaService {
 
+
 	@Autowired
-	private IEncabezadoFacturaDao encabezadoDao;
-	
+	private IEncabezadoFacturaDao encaDao;
+
 	@Override
 	@Transactional(readOnly = true)
 	public List<EncabezadoFactura> findAll() {
-		// TODO Auto-generated method stub
-		return (List<EncabezadoFactura>) encabezadoDao.findAll();
-	}
 
-	@Override
-	@Transactional
-	public EncabezadoFactura save(EncabezadoFactura encabezadoFactu) {
-		// TODO Auto-generated method stub
-		return encabezadoDao.save(encabezadoFactu);
+		return (List<EncabezadoFactura>) encaDao.findAll();
 	}
 
 	@Override
 	@Transactional(readOnly = true)
-	public EncabezadoFactura findById(Long idEncabezado) {
+	public EncabezadoFactura findById(Long id) {
 		// TODO Auto-generated method stub
-		return encabezadoDao.findById(idEncabezado).orElse(null);
+		return encaDao.findById(id).orElse(null);
 	}
 
 	@Override
 	@Transactional
-	public void delete(Long idEncabezado) {
+	public EncabezadoFactura save(EncabezadoFactura enca) {
 		// TODO Auto-generated method stub
-		encabezadoDao.deleteById(idEncabezado);
+		return encaDao.save(enca);
 	}
 
+	@Override
+	@Transactional
+	public void delete(Long id) {
+		// TODO Auto-generated method stub
+		encaDao.deleteById(id);
+	}
 }

@@ -1,4 +1,4 @@
-package com.studentstay.app.Entity;
+package com.StudentStay.app.Entity;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -17,7 +17,7 @@ import jakarta.persistence.TemporalType;
 import jakarta.persistence.UniqueConstraint;
 
 @Entity
-@Table(name = "encabezadofactura", uniqueConstraints = {@UniqueConstraint(columnNames= {"idEncabezado","idArriendo"})})
+@Table(name = "encabezadofactura", uniqueConstraints = {@UniqueConstraint(columnNames= {"idEncabezado","idReserva"})})
 public class EncabezadoFactura implements Serializable {
 	
 	/**
@@ -28,7 +28,7 @@ public class EncabezadoFactura implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idEncabezado;
 	private Long idCliente;
-	private Long idArriendo;
+	private Long idReserva;
 	@Temporal(TemporalType.DATE)
 	private Date fechaFactura;
 	private Double total;
@@ -68,11 +68,11 @@ public class EncabezadoFactura implements Serializable {
 	public void setDetalleFac(List<detalleFactura> detalleFac) {
 		this.detalleFac = detalleFac;
 	}
-	public Long getIdArriendo() {
-		return idArriendo;
+	public Long getIdReserva() {
+		return idReserva;
 	}
-	public void setIdArriendo(Long idArriendo) {
-		this.idArriendo = idArriendo;
+	public void setIdReserva(Long idReserva) {
+		this.idReserva = idReserva;
 	}
 	
 	
