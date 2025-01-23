@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ZHoteappiApplication {
+public class StudentStayWebApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ZHoteappiApplication.class, args);
+		SpringApplication.run(StudentStayWebApplication.class, args);
 	}
 
 }
