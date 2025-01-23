@@ -46,6 +46,6 @@ public class Administrador implements Serializable{
 	public void setCedula_persona(String cedula_persona) {
 		this.cedula_persona = cedula_persona;
 	}
-	
+	//prueba
 	
 }
