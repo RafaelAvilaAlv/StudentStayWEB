@@ -18,8 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.StudentStay.app.Entity.TipoServicio;
 import com.StudentStay.app.Services.ITipoServicioService;
 
-@CrossOrigin(origins= {"http://localhost:4200","http://192.168.12.164:8081","http://192.168.0.119:8081","http://192.168.19.119:8081"})
-//@CrossOrigin(origins = {"http://192.168.40.228:8081"})
+@CrossOrigin(origins= {"http://localhost:4200","http://192.168.12.164:8081","http://192.168.0.119:8081","http://192.168.19.119:8081","http://192.168.18.5:8081"})
 @RestController
 @RequestMapping("/api")
 public class TipoServicioController {

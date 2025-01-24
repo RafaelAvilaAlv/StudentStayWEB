@@ -37,6 +37,8 @@ public class Habitaciones implements Serializable {
 	@Column(name = "foto", columnDefinition = "TEXT")
 	private String foto;
 	private String estado;
+	private String latitud;
+	private String longitud;
 
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name = "idHabitaciones")
@@ -125,6 +127,25 @@ public class Habitaciones implements Serializable {
 	public void setEstado(String estado) {
 		this.estado = estado;
 	}
+
+	public String getLatitud() {
+		return latitud;
+	}
+
+	public void setLatitud(String latitud) {
+		this.latitud = latitud;
+	}
+
+	public String getLongitud() {
+		return longitud;
+	}
+
+	public void setLongitud(String longitud) {
+		this.longitud = longitud;
+	}
+
+	
+	
 	
 	
 

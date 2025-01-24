@@ -19,8 +19,7 @@ import com.StudentStay.app.Entity.Reservas;
 import com.StudentStay.app.Services.IReservasService;
 
 
-@CrossOrigin(origins= {"http://localhost:4200","http://192.168.12.164:8081","http://192.168.0.119:8081","http://192.168.19.119:8081"})
-@RestController
+@CrossOrigin(origins= {"http://localhost:4200","http://192.168.12.164:8081","http://192.168.0.119:8081","http://192.168.19.119:8081","http://192.168.18.5:8081"})@RestController
 @RequestMapping("/api")
 public class ReservasController {
 	@Autowired
