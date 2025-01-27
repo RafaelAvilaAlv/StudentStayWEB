@@ -28,6 +28,7 @@ public class Recepcionista  implements Serializable{
 	private String contrasena;
 	private String cedula_persona;
 	
+	
 	@OneToMany(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
 	@JoinColumn(name="idRecepcionista")
 	private List<Reservas>Reservas;

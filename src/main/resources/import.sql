@@ -61,6 +61,13 @@ INSERT INTO `cantones`(`id_canton`, `id_provincia`, `nombre`) VALUES ('0805','08
 INSERT INTO `cantones`(`id_canton`, `id_provincia`, `nombre`) VALUES ('0806','08','Rioverde');
 INSERT INTO `cantones`(`id_canton`, `id_provincia`, `nombre`) VALUES ('0807','08','San Lorenzo');
 
+INSERT INTO `roles` (`id_rol`, `nombre`, `descripcion`) VALUES
+('1', 'Administrador', 'Usuario con privilegios administrativos');
+INSERT INTO `roles` (`id_rol`, `nombre`, `descripcion`) VALUES
+('2', 'Recepcionista', 'Usuario encargado de la recepción');
+INSERT INTO `roles` (`id_rol`, `nombre`, `descripcion`) VALUES
+('3', 'Cliente', 'Usuario registrado como cliente');
+
 INSERT INTO `personas` (`cedula_persona`, `apellido`, `apellido2`, `direccion`, `edad`, `genero`, `id_canton`, `nombre`, `nombre2`, `telefono`) VALUES ('1104337389', 'Avila', 'Alvarez', 'Control Sur', '25', 'Masculino', '0102', 'Milton', 'Rafael', '09567312643');  
 INSERT INTO `personas` (`cedula_persona`, `apellido`, `apellido2`, `direccion`, `edad`, `genero`, `id_canton`, `nombre`, `nombre2`, `telefono`) VALUES ('0107971244', 'Zhungo', 'Chimbo', 'El Valle', '21', 'Femenino', '0102', 'Gloria', 'Estefania', '0992349767');
 INSERT INTO `personas` (`cedula_persona`, `apellido`, `apellido2`, `direccion`, `edad`, `genero`, `id_canton`, `nombre`, `nombre2`, `telefono`) VALUES ('0107535445', 'Morocho', 'Chimbo', 'Ochoa Leon', '20', 'Masculino', '0103', 'Jose', 'Marcelo', '09565628643');

@@ -27,6 +27,11 @@ public class Persona {
 	private int edad;
 	private String id_canton;
 
+	// Nuevos atributos para contacto de emergencia
+	private String nombreContactoEmergencia;
+	private String telefonoContactoEmergencia;
+	private String parentescoContactoEmergencia;
+
 	@OneToMany(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
 	@JoinColumn(name="cedula_persona")
 	private List<Cliente>cliente;
@@ -111,6 +116,28 @@ public class Persona {
 		this.recepcionista = recepcionista;
 	}
 	
+	// Getters y setters para los nuevos atributos
+	public String getNombreContactoEmergencia() {
+		return nombreContactoEmergencia;
+	}
 
-	
+	public void setNombreContactoEmergencia(String nombreContactoEmergencia) {
+		this.nombreContactoEmergencia = nombreContactoEmergencia;
+	}
+
+	public String getTelefonoContactoEmergencia() {
+		return telefonoContactoEmergencia;
+	}
+
+	public void setTelefonoContactoEmergencia(String telefonoContactoEmergencia) {
+		this.telefonoContactoEmergencia = telefonoContactoEmergencia;
+	}
+
+	public String getParentescoContactoEmergencia() {
+		return parentescoContactoEmergencia;
+	}
+
+	public void setParentescoContactoEmergencia(String parentescoContactoEmergencia) {
+		this.parentescoContactoEmergencia = parentescoContactoEmergencia;
+	}
 }

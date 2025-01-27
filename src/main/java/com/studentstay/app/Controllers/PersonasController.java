@@ -18,48 +18,53 @@ import org.springframework.web.bind.annotation.RestController;
 import com.StudentStay.app.Entity.Persona;
 import com.StudentStay.app.Services.IPersonaService;
 
-
-
-@CrossOrigin(origins= {"http://localhost:4200","http://192.168.12.164:8081","http://192.168.0.119:8081","http://192.168.19.119:8081","http://192.168.18.5:8081"})@RestController
+@CrossOrigin(origins = {"http://localhost:4200","http://192.168.12.164:8081","http://192.168.0.119:8081","http://192.168.19.119:8081","http://192.168.18.5:8081"})
+@RestController
 @RequestMapping("/api")
 public class PersonasController {
-	@Autowired
-	private IPersonaService personaService;
 
-	@GetMapping("/personas")
-	public List<Persona> index() {
-		return personaService.findAll();
-	}
+    @Autowired
+    private IPersonaService personaService;
 
-	@GetMapping("/personas/{id}")
-	public Persona show(@PathVariable String id) {
-		return personaService.findById(id);
-	}
+    @GetMapping("/personas")
+    public List<Persona> index() {
+        return personaService.findAll();
+    }
 
-	@PostMapping("/personas")
-	@ResponseStatus(HttpStatus.CREATED)
-	public Persona create(@RequestBody Persona persona) {
-		return personaService.save(persona);
-	}
+    @GetMapping("/personas/{id}")
+    public Persona show(@PathVariable String id) {
+        return personaService.findById(id);
+    }
 
-	@PutMapping("/personas/{id}")
-	@ResponseStatus(HttpStatus.CREATED)
-	public Persona update(@RequestBody Persona persona, @PathVariable String id) {
-		Persona personaActual = personaService.findById(id);
-		personaActual.setNombre(persona.getNombre());
-		personaActual.setNombre2(persona.getNombre2());
-		personaActual.setApellido(persona.getApellido());
-		personaActual.setApellido2(persona.getApellido2());
-		personaActual.setGenero(persona.getGenero());
-		personaActual.setDireccion(persona.getDireccion());
-		personaActual.setTelefono(persona.getTelefono());
-		personaActual.setEdad(persona.getEdad());
-		return personaService.save(personaActual);
-	}
+    @PostMapping("/personas")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Persona create(@RequestBody Persona persona) {
+        return personaService.save(persona);
+    }
 
-	@DeleteMapping("/personas/{id}")
-	@ResponseStatus(HttpStatus.NO_CONTENT)
-	public void delete(@PathVariable String id) {
-		personaService.delete(id);
-	}
+    @PutMapping("/personas/{id}")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Persona update(@RequestBody Persona persona, @PathVariable String id) {
+        Persona personaActual = personaService.findById(id);
+
+        personaActual.setNombre(persona.getNombre());
+        personaActual.setNombre2(persona.getNombre2());
+        personaActual.setApellido(persona.getApellido());
+        personaActual.setApellido2(persona.getApellido2());
+        personaActual.setGenero(persona.getGenero());
+        personaActual.setDireccion(persona.getDireccion());
+        personaActual.setTelefono(persona.getTelefono());
+        personaActual.setEdad(persona.getEdad());
+        personaActual.setNombreContactoEmergencia(persona.getNombreContactoEmergencia());
+        personaActual.setTelefonoContactoEmergencia(persona.getTelefonoContactoEmergencia());
+        personaActual.setParentescoContactoEmergencia(persona.getParentescoContactoEmergencia());
+
+        return personaService.save(personaActual);
+    }
+
+    @DeleteMapping("/personas/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void delete(@PathVariable String id) {
+        personaService.delete(id);
+    }
 }
