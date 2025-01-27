@@ -1,7 +1,6 @@
 package com.StudentStay.app.Controllers;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -18,7 +17,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.StudentStay.app.Entity.Servicio;
 import com.StudentStay.app.Services.IServicioService;
 
-@CrossOrigin(origins= {"http://localhost:4200","http://192.168.12.164:8081","http://192.168.0.119:8081","http://192.168.19.119:8081","http://192.168.18.5:8081"})@RequestMapping("/api")
+@CrossOrigin(origins= {"http://localhost:4200","http://192.168.12.164:8081","http://192.168.0.119:8081","http://192.168.19.119:8081"})
+@RestController
+@RequestMapping("/api")
 public class ServiciosController {
 	@Autowired
 	private IServicioService servicioService;
