@@ -25,6 +25,17 @@ public class Servicio implements Serializable {
 	private Long idHabitaciones;
 	private Long idTipo_servicio;
 	private String estado;
+	private Integer nHabitacion;
+	
+	
+
+	public Integer getnHabitacion() {
+		return nHabitacion;
+	}
+
+	public void setnHabitacion(Integer nHabitacion) {
+		this.nHabitacion = nHabitacion;
+	}
 
 	public Long getIdServicio() {
 		return idServicio;

@@ -47,6 +47,7 @@ public class ServiciosController {
 		servicioActual.setEstado(servicio.getEstado());
 		servicioActual.setDescripcion(servicio.getDescripcion());
 		servicioActual.setIdTipo_servicio(servicio.getIdTipo_servicio());
+		servicioActual.setnHabitacion(servicio.getnHabitacion());
 		return servicioService.save(servicioActual);
 	}
 
