@@ -29,6 +29,18 @@ public class TipoServicio implements Serializable {
 	private String descripciontipo;
 	@Column(name = "foto", columnDefinition = "TEXT")
 	private String foto;
+	
+	private Integer nmHabitacion;
+	
+	
+
+	public Integer getNmHabitacion() {
+		return nmHabitacion;
+	}
+
+	public void setNmHabitacion(Integer nmHabitacion) {
+		this.nmHabitacion = nmHabitacion;
+	}
 
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name = "idTipo_servicio")

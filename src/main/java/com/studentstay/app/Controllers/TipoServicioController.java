@@ -48,6 +48,7 @@ public class TipoServicioController {
 		tipoServicioActual.setTitulo(tipoServicio.getTitulo());
 		tipoServicioActual.setDescripciontipo(tipoServicio.getDescripciontipo());
 		tipoServicioActual.setFoto(tipoServicio.getFoto());
+		tipoServicioActual.setNmHabitacion(tipoServicio.getNmHabitacion());
 		return tipoServicioService.save(tipoServicioActual);
 	}
 
